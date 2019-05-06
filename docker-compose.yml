@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+    api:
+        build: docker/dev/api
+        volumes:
+            - ./data:/var/www/data:cached
+        ports:
+            - 3000:3000
