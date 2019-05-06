@@ -7,4 +7,7 @@ WORKDIR "/var/www"
 
 EXPOSE 8080
 
-CMD sleep 1000000000
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
+
+CMD yarn serve
