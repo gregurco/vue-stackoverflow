@@ -1,10 +1,16 @@
 <template>
-  <div id="foo">Foo</div>
+  <div id="foo">
+    Foo
+
+    <counter />
+  </div>
 </template>
 
 <script>
+import Counter from '@/components/Counter'
 export default {
-  name: 'Foo'
+  name: 'Foo',
+  components: { Counter }
 }
 </script>
 
