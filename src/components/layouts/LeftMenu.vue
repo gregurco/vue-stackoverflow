@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer permanent :right="true">
+  <v-navigation-drawer>
     <v-list dense class="pt-0">
       <v-list-tile @click="">
         <v-list-tile-content>
