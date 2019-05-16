@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import CommonLayout from '@/components/layouts/CommonLayout'
-import FooRoutes from '@/router/foo'
-import BarRoutes from '@/router/bar'
+import Home from '@/views/Home'
 
 Vue.use(Router)
 
@@ -14,8 +13,11 @@ export default new Router({
       path: '',
       component: CommonLayout,
       children: [
-        ...FooRoutes,
-        ...BarRoutes
+        {
+          path: '',
+          name: 'home',
+          component: Home
+        }
       ]
     }
   ]
