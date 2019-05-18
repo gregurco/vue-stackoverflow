@@ -10,13 +10,29 @@
       </v-flex>
     </v-layout>
 
-    ...
+    <div v-for="question in questions" :key="question.id">
+      <div v-html="question.body"></div>
+      <hr/>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from '@/plugins/axios'
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  data () {
+    return {
+      questions: []
+    }
+  },
+  created () {
+    axios.get('/questions?_limit=10')
+      .then(({ data }) => {
+        this.questions = data
+      })
+  }
 }
 </script>
 
