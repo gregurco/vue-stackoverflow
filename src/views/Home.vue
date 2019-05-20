@@ -6,13 +6,16 @@
       </v-flex>
 
       <v-flex xs6 class="text-xs-right">
-        <v-btn color="info">Ask Question</v-btn>
+        <v-btn color="info">
+          Ask Question
+        </v-btn>
       </v-flex>
     </v-layout>
 
     <div v-for="question in questions" :key="question.id">
-      <div v-html="question.body"></div>
-      <hr/>
+      <!-- eslint-disable vue/no-v-html -->
+      <div v-html="question.body" />
+      <hr>
     </div>
   </div>
 </template>
