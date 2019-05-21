@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar>
+  <v-toolbar class="toolbar">
     <v-toolbar-title>
       <router-link :to="{ name: 'home' }">StackOverflow</router-link>
     </v-toolbar-title>
@@ -28,7 +28,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss">
+
   .v-toolbar__title > a {
     color: black;
     text-decoration: none;
