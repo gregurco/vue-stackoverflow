@@ -7,7 +7,7 @@
         <LeftMenu />
       </v-flex>
 
-      <v-flex xs8>
+      <v-flex xs8 class="pa-5">
         <router-view />
       </v-flex>
       <v-flex xs2>

@@ -21,5 +21,6 @@ export default new Router({
         }
       ]
     }
+
   ]
 })
