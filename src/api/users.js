@@ -1,3 +1,3 @@
 import API from './api'
 
-export const fetchUsers = (param) => API.get('/users')
+export const fetchUsers = (params) => API.get('/users', { params })
