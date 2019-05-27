@@ -5,7 +5,7 @@
     </p>
     <v-text-field
       label="Search"
-      @input="(q)=>fetchUsers({q})"
+      @input="(q)=>fetchUsers({q,limit:20})"
     />
     <div v-if="loading" class="text-xs-center mt-5">
       <v-progress-circular

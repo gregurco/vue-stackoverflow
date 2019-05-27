@@ -1,0 +1,1 @@
+export const USER_GET_LOADING = 'USER_GET_LOADING'

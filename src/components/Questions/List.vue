@@ -46,7 +46,9 @@
           </v-flex>
           <v-flex xs10>
             <div class="title">
-              {{ question.title }}
+              <router-link :to="{name:'question',params:{id:question.id}}">
+                {{ question.title }}
+              </router-link>
             </div>
 
             <div class="mt-3">

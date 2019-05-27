@@ -3,7 +3,8 @@ import {
 } from '@/api/questions'
 export const formatRow = (row) => ({
   ...row,
-  shortBody: row.body.replace(/<[^>]+>/g, '').substr(0, 200)
+  id: parseInt(row.id),
+  shortBody: row.body.replace(/<[^>]+>/g, '').substr(0, 200) + '...'
 })
 export default {
   namespaced: true,
@@ -14,8 +15,11 @@ export default {
   actions: {
     fetch ({ commit }, params) {
       commit('mutateLoading', true)
-      fetchQuestions(params)
-        .then(result => commit('mutateList', result.data.map(row => formatRow(row))))
+      return fetchQuestions(params)
+        .then(result => {
+          commit('mutateList', result.data.map(row => formatRow(row)))
+          return result
+        })
         .finally(() => commit('mutateLoading', false))
     }
   },
@@ -28,6 +32,7 @@ export default {
     }
   },
   getters: {
+    getById: (state) => (id) => state.list.find(element => console.log(typeof element.id, typeof id) || element.id === id),
     getList: (state) => state.list,
     getLoading: (state) => state.loading
   }
